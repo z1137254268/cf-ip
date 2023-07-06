@@ -2276,14 +2276,14 @@ async function testIPs(ipList) {
       }, timeout);
       if (ch) {
         timeout = 1 * multiply * maxLatency;
-        document.getElementById('test-no').innerText = `تست شماره ${testNo}:`;
+        document.getElementById('test-no').innerText = `测试编号 ${testNo}:`;
         document.getElementById('ip-no').innerText = ip;
         document.getElementById('ip-no').style = `color: green`;
         document.getElementById('ip-try').innerText = ch;
         document.getElementById('ip-latency').innerText = Math.floor((performance.now() - startTime) / chNo) + 'ms';
       } else {
         timeout = 1.2 * multiply * maxLatency;
-        document.getElementById('test-no').innerText = `تست شماره ${testNo}:`;
+        document.getElementById('test-no').innerText = `测试编号 ${testNo}:`;
         document.getElementById('ip-no').innerText = ip;
         document.getElementById('ip-no').style = `color: red`;
         document.getElementById('ip-try').innerText = '';
@@ -2332,7 +2332,7 @@ async function testIPs(ipList) {
   document.getElementById('ip-no').innerText = '';
   document.getElementById('ip-try').innerText = '';
   document.getElementById('ip-latency').innerText = '';
-  document.getElementById('btn-start').innerText = 'شروع مجدد';
+  document.getElementById('btn-start').innerText = '重新开始';
   document.getElementById('btn-start').disabled = false;
   document.getElementById('btn-start').style.display = 'inline-block';
   document.getElementById('btn-start').style.color = 'green';
@@ -2340,19 +2340,19 @@ async function testIPs(ipList) {
 
   if (immediateStop) {
     immediateStop = false;
-    document.getElementById('test-no').innerText = `لغو شد!`;
+    document.getElementById('test-no').innerText = `取消!`;
     document.getElementById('test-no').style = `color: red; font-weight: bold;`;
   } else {
-    document.getElementById('test-no').innerText = `پایان`;
+    document.getElementById('test-no').innerText = `end`;
     document.getElementById('test-no').style = `color: green; font-weight: bold;`;
   }
 }
 
 function copyToClipboard(ip) {
   navigator.clipboard.writeText(ip).then(() => {
-    alert('آی‌پی‌ در کلیپ‌بورد کپی شد.');
+    alert('IP被复制到剪贴板.');
   }).catch(() => {
-    alert('مشکلی پیش آمده است!');
+    alert('有问题!');
   });
 }
 
